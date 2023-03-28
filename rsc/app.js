@@ -4,8 +4,8 @@ const cors = require('cors')
 const morgan = require('morgan')
 const db = require('./utils/database')
 const initModels = require('./models/init.model')
-const userRouter = require('./routers/user.router')
 const errorHandlerRouter = require('./routers/errorHandler.router')
+const apiRouters = require('./routers/index.router')
 
 const PORT = 7500
 const app = express()
@@ -25,7 +25,7 @@ db.sync({alter: true})
 .then(() => console.log('Base de datos sincronizada'))
 .catch(err => console.error(err))
 
-app.use(userRouter)
+apiRouters(app)
 
 errorHandlerRouter(app)
 
