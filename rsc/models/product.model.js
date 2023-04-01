@@ -20,6 +20,14 @@ const Product = db.define("products",{
         type:DataTypes.BOOLEAN,
         defaultValue:true
     },
+    quantity:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    price:{
+        type:DataTypes.FLOAT,
+        defaultValue:0.0
+    },
     userId:{
         type:DataTypes.INTEGER,
         allowNull:false,

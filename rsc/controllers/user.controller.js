@@ -9,7 +9,7 @@ const createdUser = async (req, res, next) => {
         const result = await UserService.create(newUser)
         res.status(201).send(result)
 
-        const { id, email, username } = result
+        const { id, email, username} = result
         const token = await AuthServices.getToken({
             id, email, username
         })
@@ -24,6 +24,8 @@ const createdUser = async (req, res, next) => {
                     <a href="http://localhost:5173/#/verify?token=${token}" target="_blank"> validar correo </a>`
                 })
                 */
+
+         console.log(token);
 
     } catch (error) {
         next(error)

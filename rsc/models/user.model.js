@@ -29,7 +29,13 @@ const User = db.define("users",{
     },
     emailVerified: {
         type: DataTypes.BOOLEAN,
-        defaultValue: false,
+        defaultValue: true,
+      },
+      role:{
+        type:DataTypes.ENUM,
+        values: ['ADMIN', 'SELLER', 'USER'],
+        defaultValue:"USER",
+        allowNull:false
       }
 },{
     timestamps:true,

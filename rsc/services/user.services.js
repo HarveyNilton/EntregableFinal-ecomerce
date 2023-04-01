@@ -6,7 +6,7 @@ class UserService {
     static async userAll() {
         try {
             const users = await User.findAll({
-                attributes: ['id', 'username', 'email'],
+                attributes: ['id', 'username', 'email','role'],
                 order: ['id']
             })
 
